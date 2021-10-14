@@ -1,18 +1,18 @@
 {
   "files": {
-    "main.css": "/nightfordrinks/static/css/main.6dea0f05.chunk.css",
-    "main.js": "/nightfordrinks/static/js/main.977a52dd.chunk.js",
-    "main.js.map": "/nightfordrinks/static/js/main.977a52dd.chunk.js.map",
-    "runtime-main.js": "/nightfordrinks/static/js/runtime-main.24a2be69.js",
-    "runtime-main.js.map": "/nightfordrinks/static/js/runtime-main.24a2be69.js.map",
-    "static/js/2.802758b0.chunk.js": "/nightfordrinks/static/js/2.802758b0.chunk.js",
-    "static/js/2.802758b0.chunk.js.map": "/nightfordrinks/static/js/2.802758b0.chunk.js.map",
-    "index.html": "/nightfordrinks/index.html",
-    "static/css/main.6dea0f05.chunk.css.map": "/nightfordrinks/static/css/main.6dea0f05.chunk.css.map",
-    "static/js/2.802758b0.chunk.js.LICENSE.txt": "/nightfordrinks/static/js/2.802758b0.chunk.js.LICENSE.txt"
+    "main.css": "/nightofdrinks/static/css/main.6dea0f05.chunk.css",
+    "main.js": "/nightofdrinks/static/js/main.977a52dd.chunk.js",
+    "main.js.map": "/nightofdrinks/static/js/main.977a52dd.chunk.js.map",
+    "runtime-main.js": "/nightofdrinks/static/js/runtime-main.7c048903.js",
+    "runtime-main.js.map": "/nightofdrinks/static/js/runtime-main.7c048903.js.map",
+    "static/js/2.802758b0.chunk.js": "/nightofdrinks/static/js/2.802758b0.chunk.js",
+    "static/js/2.802758b0.chunk.js.map": "/nightofdrinks/static/js/2.802758b0.chunk.js.map",
+    "index.html": "/nightofdrinks/index.html",
+    "static/css/main.6dea0f05.chunk.css.map": "/nightofdrinks/static/css/main.6dea0f05.chunk.css.map",
+    "static/js/2.802758b0.chunk.js.LICENSE.txt": "/nightofdrinks/static/js/2.802758b0.chunk.js.LICENSE.txt"
   },
   "entrypoints": [
-    "static/js/runtime-main.24a2be69.js",
+    "static/js/runtime-main.7c048903.js",
     "static/js/2.802758b0.chunk.js",
     "static/css/main.6dea0f05.chunk.css",
     "static/js/main.977a52dd.chunk.js"
