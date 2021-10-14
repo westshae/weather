@@ -1,2 +1,0 @@
-(this.webpackJsonpnightofdrinks=this.webpackJsonpnightofdrinks||[]).push([[0],{10:function(n,t,e){"use strict";e.r(t);var c=e(1),i=e.n(c),r=e(3),s=e.n(r),o=(e(8),e(0));var d=function(){return Object(o.jsx)("div",{children:Object(o.jsx)("h1",{children:"Basic setup"})})};s.a.render(Object(o.jsx)(i.a.StrictMode,{children:Object(o.jsx)(d,{})}),document.getElementById("root"))},8:function(n,t,e){}},[[10,1,2]]]);
-//# sourceMappingURL=main.2b2e811c.chunk.js.map
