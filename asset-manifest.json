@@ -1,20 +1,20 @@
 {
   "files": {
     "main.css": "/nightofdrinks/static/css/main.6dea0f05.chunk.css",
-    "main.js": "/nightofdrinks/static/js/main.977a52dd.chunk.js",
-    "main.js.map": "/nightofdrinks/static/js/main.977a52dd.chunk.js.map",
+    "main.js": "/nightofdrinks/static/js/main.2b2e811c.chunk.js",
+    "main.js.map": "/nightofdrinks/static/js/main.2b2e811c.chunk.js.map",
     "runtime-main.js": "/nightofdrinks/static/js/runtime-main.7c048903.js",
     "runtime-main.js.map": "/nightofdrinks/static/js/runtime-main.7c048903.js.map",
-    "static/js/2.802758b0.chunk.js": "/nightofdrinks/static/js/2.802758b0.chunk.js",
-    "static/js/2.802758b0.chunk.js.map": "/nightofdrinks/static/js/2.802758b0.chunk.js.map",
+    "static/js/2.2ea13e3f.chunk.js": "/nightofdrinks/static/js/2.2ea13e3f.chunk.js",
+    "static/js/2.2ea13e3f.chunk.js.map": "/nightofdrinks/static/js/2.2ea13e3f.chunk.js.map",
     "index.html": "/nightofdrinks/index.html",
     "static/css/main.6dea0f05.chunk.css.map": "/nightofdrinks/static/css/main.6dea0f05.chunk.css.map",
-    "static/js/2.802758b0.chunk.js.LICENSE.txt": "/nightofdrinks/static/js/2.802758b0.chunk.js.LICENSE.txt"
+    "static/js/2.2ea13e3f.chunk.js.LICENSE.txt": "/nightofdrinks/static/js/2.2ea13e3f.chunk.js.LICENSE.txt"
   },
   "entrypoints": [
     "static/js/runtime-main.7c048903.js",
-    "static/js/2.802758b0.chunk.js",
+    "static/js/2.2ea13e3f.chunk.js",
     "static/css/main.6dea0f05.chunk.css",
-    "static/js/main.977a52dd.chunk.js"
+    "static/js/main.2b2e811c.chunk.js"
   ]
 }
