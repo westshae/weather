@@ -3,9 +3,14 @@ import styled, {css} from "styled-components";
 import MediaQuery from "react-responsive";
 import React from "react"
 
+//Interface for props
+interface Props{
+  left?: any;
+}
+
 
 //CSS for Navigation Buttons
-const Button = styled.button`
+const Button = styled.button<Props>`
     background:transparent;
     color:#f8f8ff;
     border:none;
@@ -15,6 +20,9 @@ const Button = styled.button`
 
     transition:  0.25s ease-out;
 
+    ${props => props.left && css`
+        margin-left:auto;
+    `};
 
     //Desktop
     @media only screen 
@@ -66,7 +74,8 @@ const  Navigation = () => {
     return (
         <div>
             <StyledNavigation>
-                <Button onClick={() => openInNewTab("https://www.google.com/maps/search/?api=1&query=" + PLACENAME)}>{PLACENAME}</Button>   
+                <Button onClick={() => openInNewTab("https://www.google.com/maps/search/?api=1&query=" + PLACENAME)}>PLACENAME, COUNTRYNAME</Button>   
+                <Button left>CURRENT DATE, TIMEZONE</Button>
             </StyledNavigation>
         </div>
     )
