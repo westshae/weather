@@ -46,18 +46,11 @@ const Image = styled.img`
 const Footer = () =>{
     return(
         <StyledFooter>
-            <Paragraph>Copyright 2021 @ Victoria Engineering Club</Paragraph>
-            <Paragraph>Contact email: contact@vec.ac.nz</Paragraph>
+            <Paragraph>Application created by github.com/westshae</Paragraph>
 
             {/* Desktop */}
             <MediaQuery minWidth={480}>
-                <Paragraph>Access Github {">>"}</Paragraph>
-                <Anchor href="https://github.com/vecnz/vecnz.github.io" target="_blank">GithubLink</Anchor>
-            </MediaQuery>
-
-            {/* Mobile */}
-            <MediaQuery maxWidth={480}>
-                <Paragraph>Github link: <Anchor href="https://github.com/vecnz/vecnz.github.io" target="_blank">github.com</Anchor></Paragraph>
+                <Anchor href="https://github.com/vecnz/vecnz.github.io" target="_blank">github.com/westshae</Anchor>
             </MediaQuery>
             
 
