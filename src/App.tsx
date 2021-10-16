@@ -6,6 +6,7 @@ import Container from './components/layout/Container';
 import Content from './components/layout/Content';
 import Navigation from './components/layout/Navigation';
 import Footer from './components/layout/Footer';
+import WeatherCard from "./components/weather/WeatherCard";
 
 const App = () => {
   const [data, setData] = useState();
@@ -17,6 +18,7 @@ const App = () => {
         <Navigation/>
 
           <Content>
+            <WeatherCard/>
             <h1>{}</h1>
           </Content>
         
@@ -36,7 +38,6 @@ const getWeather = async () =>{
   catch(error){
     console.error(error);
   }
-  // data = createContext(data);
   return data;
 }
 
