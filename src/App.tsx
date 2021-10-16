@@ -6,7 +6,7 @@ import Container from './components/layout/Container';
 import Content from './components/layout/Content';
 import Navigation from './components/layout/Navigation';
 import Footer from './components/layout/Footer';
-import WeatherCard from "./components/weather/WeatherCard";
+import WeatherGrid from "./components/weather/WeatherGrid";
 
 const App = () => {
   const [data, setData] = useState();
@@ -18,8 +18,7 @@ const App = () => {
         <Navigation/>
 
           <Content>
-            <WeatherCard/>
-            <h1>{}</h1>
+            <WeatherGrid/>
           </Content>
         
         <Footer/>
