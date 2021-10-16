@@ -22,6 +22,8 @@ const StyledFooter = styled.div`
 //CSS for Footer text
 const Paragraph = styled.p`
     text-align:center;
+    color:#f8f9fa;
+
     margin:0.75rem;
 `
 
