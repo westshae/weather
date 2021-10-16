@@ -1,8 +1,8 @@
 # Intention
-Setup a basic ReactJS app using Typescript, which uses Axios to connect to a api and display random cocktails/drinks
-
-[API LINK](https://rapidapi.com/thecocktaildb/api/the-cocktail-db/)
+Setup a basic ReactJS app using Typescript, which uses Axios to connect to a api and display weather data.
 
 # Basic setup
-1. Run "yarn install"
-2. Run "yarn start"
+1. To install packages, run "yarn install"
+2. To run dev build, run "yarn start"
+3. To create production build, run "yarn build"
+4. To deploy to github pages, run "yarn deploy"
