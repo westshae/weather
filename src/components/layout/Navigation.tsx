@@ -1,7 +1,10 @@
 //Package imports
 import styled, {css} from "styled-components";
 import MediaQuery from "react-responsive";
-import React from "react"
+import React, {useContext, useState} from "react"
+
+import {Context} from "../../App"
+import { textSpanContainsPosition } from "typescript";
 
 //Interface for props
 interface Props{
@@ -62,20 +65,30 @@ const StyledDiv = styled.div`
 //Prevents bad security, thanks stackoverflow
 const openInNewTab = (url:string) => {
     const newWindow = window.open(url, '_blank', 'noopener,noreferrer')
-    if (newWindow) newWindow.opener = null
+    if (newWindow) {newWindow.opener = null};
 }
 
 
-
-
 //Component returned
-const  Navigation = () => {
-  var PLACENAME = "Napier";
+const  Navigation = () => {   
+    const [cityname, setCityname] = useState("");
+    const [countryname, setCountryname] = useState("");
+    const [timezone, setTimezone] = useState("");
+    const [datetime, setDatetime] = useState("");
+    
+    
+    useContext(Context).then((value:any)=>{
+        setCityname(value.city.cityname);
+        setCountryname(value.city.countryname);
+        setTimezone(value.city.timezone);
+        setDatetime(value.city.localtime);
+    });
+    
     return (
         <div>
             <StyledNavigation>
-                <Button onClick={() => openInNewTab("https://www.google.com/maps/search/?api=1&query=" + PLACENAME)}>PLACENAME, COUNTRYNAME</Button>   
-                <Button left>CURRENT DATE, TIMEZONE</Button>
+                <Button onClick={() => openInNewTab("https://www.google.com/maps/search/?api=1&query=" + cityname)}>{cityname}, {countryname}</Button>   
+                <Button left>{datetime}, {timezone}</Button>
             </StyledNavigation>
         </div>
     )
