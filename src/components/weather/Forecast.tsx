@@ -3,8 +3,8 @@ import styled from "styled-components";
 
 const StyledDiv = styled.div`
   display:grid;
-  grid-template-columns:repeat(6, 1fr);
-  gap:2%;
+  grid-template-columns:repeat(3, 1fr);
+  grid-template-rows:repeat(2, 1fr);
   background-color:#F3F5F5;
   align-items:center;
   border:none;
@@ -14,7 +14,6 @@ const StyledDiv = styled.div`
 const Paragraph = styled.p`
   font-size:1.5em;
   display:grid;
-  background-color:#F3F5F5;
   color:#312E3D;
   justify-content:center;
   align-items:center;
@@ -56,13 +55,13 @@ const WeatherCard = (props:any) =>{
   return(
     <StyledDiv>
       <Paragraph>{date}</Paragraph>
-      <Paragraph>{humidity}</Paragraph>
-      <Paragraph>{mintemperature}</Paragraph>
-      <Paragraph>{maxtemperature}</Paragraph>
+      <Paragraph>{humidity}%</Paragraph>
+      <Paragraph>{mintemperature} - {maxtemperature} C </Paragraph>
       <Paragraph>{conditiontext}</Paragraph>
+      <Paragraph>{chanceofrain}%</Paragraph>
+      <Paragraph>{maxwind}km/h</Paragraph>
       <Image src={conditionlink}/>
-      <Paragraph>{chanceofrain}</Paragraph>
-      <Paragraph>{maxwind}</Paragraph>
+
     </StyledDiv>
   )
 }
@@ -76,14 +75,20 @@ const Forecast = (props:any) =>{
     }
   },[props]);
 
+  const StyledDiv = styled.div`
+    display:grid;
+    grid-row-gap:1rem;
+
+  `
+
   return(
-    <div>
+    <StyledDiv>
       {
         days.map((day:any, index:number)=>{
           return(<WeatherCard key={index} data={day}/>)
         })
       }
-    </div>
+    </StyledDiv>
   )
 }
 
