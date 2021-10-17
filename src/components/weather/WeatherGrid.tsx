@@ -8,7 +8,7 @@ import Current from "../weather/Current";
 
 const StyledDiv = styled.div`
   display:grid;
-  grid-template-columns:1fr 2fr;
+  grid-template-columns:2fr 5fr;
   gap:0.5rem;
 `
 
