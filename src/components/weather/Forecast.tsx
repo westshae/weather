@@ -32,40 +32,57 @@ const Image = styled.img`
 
 
 const WeatherCard = (props:any) =>{
-  const [temperature, setTemperature] = useState("");
+  const [date, setDate] = useState("");
+  const [humidity, setHumidity] = useState("");
+  const [mintemperature, setMintemperature] = useState("");
+  const [maxtemperature, setMaxtemperature] = useState("");
   const [conditiontext, setConditiontext] = useState("");
   const [conditionlink, setConditionlink] = useState("");
-  const [windspeed, setWindspeed] = useState("");
-  const [winddirection, setWinddirection] = useState("");
-  const [humidity, setHumidity] = useState("");
-
+  const [chanceofrain, setChanceofrain] = useState("");
+  const [maxwind, setMaxwind] = useState("");
 
 
   useEffect(()=>{
-    setTemperature(props.temperature);
-    setConditiontext(props.conditiontext);
-    setConditionlink(props.conditionlink);
-    setWindspeed(props.windspeed);
-    setWinddirection(props.winddirection);
-    setHumidity(props.humidity);
+    setDate(props.data.date);
+    setHumidity(props.data.day.avghumidity);
+    setMintemperature(props.data.day.mintemp_c);
+    setMaxtemperature(props.data.day.maxtemp_c);
+    setConditiontext(props.data.day.condition.text);
+    setConditionlink(props.data.day.condition.icon);
+    setChanceofrain(props.data.day.daily_chance_of_rain);
+    setMaxwind(props.data.day.maxwind_kph);
   }, [props]);
 
   return(
     <StyledDiv>
-      <Image src={conditionlink}/>
-      <Paragraph>Condition: {conditiontext}</Paragraph>
-      <Paragraph>{temperature}</Paragraph>
-      <Paragraph>{windspeed}</Paragraph>
-      <Paragraph>{winddirection}</Paragraph>
+      <Paragraph>{date}</Paragraph>
       <Paragraph>{humidity}</Paragraph>
+      <Paragraph>{mintemperature}</Paragraph>
+      <Paragraph>{maxtemperature}</Paragraph>
+      <Paragraph>{conditiontext}</Paragraph>
+      <Image src={conditionlink}/>
+      <Paragraph>{chanceofrain}</Paragraph>
+      <Paragraph>{maxwind}</Paragraph>
     </StyledDiv>
   )
 }
 
 const Forecast = (props:any) =>{
+  const [days, setDays] = useState([]);
+  useEffect(()=>{
+    if(props.forecast != null){
+      setDays(props.forecast.forecastday);
+      console.log(props.forecast.forecastday)
+    }
+  },[props]);
+
   return(
     <div>
-      <WeatherCard forecast={props.forecast}/>
+      {
+        days.map((day:any, index:number)=>{
+          return(<WeatherCard key={index} data={day}/>)
+        })
+      }
     </div>
   )
 }
