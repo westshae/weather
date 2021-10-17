@@ -31,7 +31,7 @@ const Image = styled.img`
 `
 
 
-const Weather = (props:any) =>{
+const WeatherCard = (props:any) =>{
   const [temperature, setTemperature] = useState("");
   const [conditiontext, setConditiontext] = useState("");
   const [conditionlink, setConditionlink] = useState("");
@@ -53,7 +53,7 @@ const Weather = (props:any) =>{
   return(
     <StyledDiv>
       <Image src={conditionlink}/>
-      <Paragraph>{conditiontext}</Paragraph>
+      <Paragraph>Condition: {conditiontext}</Paragraph>
       <Paragraph>{temperature}</Paragraph>
       <Paragraph>{windspeed}</Paragraph>
       <Paragraph>{winddirection}</Paragraph>
@@ -62,4 +62,12 @@ const Weather = (props:any) =>{
   )
 }
 
-export default Weather;
+const Forecast = (props:any) =>{
+  return(
+    <div>
+      <WeatherCard forecast={props.forecast}/>
+    </div>
+  )
+}
+
+export default Forecast;

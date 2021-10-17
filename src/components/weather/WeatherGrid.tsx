@@ -2,7 +2,8 @@ import styled from "styled-components";
 import {useState, useContext, useEffect} from "react";
 import {Context} from "../../App"
 
-import WeatherCard from "../weather/WeatherCard"
+// import WeatherCard from "./Forecast"
+import Forecast from "../weather/Forecast";
 import Current from "../weather/Current";
 
 const StyledDiv = styled.div`
@@ -13,35 +14,20 @@ const StyledDiv = styled.div`
 
 
 const WeatherGrid = () =>{
-  const [temperature, setTemperature] = useState(null);
-  const [conditiontext, setConditiontext] = useState("");
-  const [conditionlink, setConditionlink] = useState("");
-  const [windspeed, setWindspeed] = useState(null);
-  const [winddirection, setWinddirection] = useState(null);
-  const [humidity, setHumidity] = useState(null);
+  const [current, setCurrent] = useState(null);
   const [forecast, setForecast] = useState(null);
-
+  const [astrology, setAstrology] = useState(null);
 
   useContext(Context).then((value:any)=>{
-    setTemperature(value.current.temp);
-    setConditiontext(value.current.condition.text);
-    setConditionlink(value.current.condition.icon);
-    setWindspeed(value.current.windspeed);
-    setWinddirection(value.current.winddirection);
-    setHumidity(value.current.humidity);
-    setForecast(value.forecast.forecastday);
+    setCurrent(value.current);
+    setForecast(value.forecast);
+    setAstrology(value.astrology);
   });
 
-  useEffect(()=>{
-    console.log(forecast);
-  },[forecast]);
  return(
    <StyledDiv>
-      <Current temperature={temperature} conditiontext={conditiontext} conditionlink={conditionlink} windspeed={windspeed} winddirection={winddirection} humidity={humidity} />
-      <div>
-      <WeatherCard temperature={temperature} conditiontext={conditiontext} conditionlink={conditionlink} windspeed={windspeed} winddirection={winddirection} humidity={humidity}/>
-
-      </div>
+      <Current current={current} astrology={astrology}/>
+      <Forecast forecast={forecast}/>
    </StyledDiv>
  )
 }

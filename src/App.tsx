@@ -22,7 +22,7 @@ const App = () => {
             <WeatherGrid/>
           </Content>
         
-        <Footer/>
+        {/* <Footer/> */}
       </Context.Provider>
     </Container>
   );

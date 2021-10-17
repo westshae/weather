@@ -3,9 +3,9 @@ import styled from "styled-components";
 
 const StyledDiv = styled.div`
   display:grid;
-  grid-template-columns:repeat(2, 1fr);
-  /* grid-template-rows:repeat(2,1fr); */
-  gap:2%;
+  grid-template-rows:1fr;
+  margin-left:10%;
+  margin-right:10%;
   background-color:#F3F5F5;
   align-items:center;
   border:none;
@@ -15,7 +15,6 @@ const StyledDiv = styled.div`
 const Paragraph = styled.p`
   font-size:1.5em;
   display:grid;
-  background-color:#F3F5F5;
   color:#312E3D;
   justify-content:center;
   align-items:center;
@@ -42,24 +41,32 @@ const Current = (props:any) =>{
 
 
 
+
   useEffect(()=>{
-    setTemperature(props.temperature);
-    setConditiontext(props.conditiontext);
-    setConditionlink(props.conditionlink);
-    setWindspeed(props.windspeed);
-    setWinddirection(props.winddirection);
-    setHumidity(props.humidity);
+    if(props.current != null){
+      setTemperature(props.current.temp);
+      setConditiontext(props.current.condition.text);
+      setConditionlink(props.current.condition.icon);
+      setWindspeed(props.current.windspeed);
+      setWinddirection(props.current.winddirection);
+      setHumidity(props.current.humidity);
+    }
   }, [props]);
 
   return(
-    <StyledDiv>
-      <Image src={conditionlink}/>
-      <Paragraph>{conditiontext}</Paragraph>
-      <Paragraph>{temperature}</Paragraph>
-      <Paragraph>{windspeed}</Paragraph>
-      <Paragraph>{winddirection}</Paragraph>
-      <Paragraph>{humidity}</Paragraph>
-    </StyledDiv>
+    <div>
+      <StyledDiv>
+        <Image src={conditionlink}/>
+        <Paragraph>Conditions: {conditiontext}</Paragraph>
+        
+
+        <Paragraph>Temperature: {temperature} C</Paragraph>
+        <Paragraph>Wind speed: {windspeed}km/h {winddirection}</Paragraph>
+        <Paragraph>Humidity: {humidity}%</Paragraph>
+      </StyledDiv>
+      <StyledDiv>
+      </StyledDiv>
+    </div>
   )
 }
 
