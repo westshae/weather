@@ -4,10 +4,10 @@ import styled from "styled-components";
 //Wraps all content on the page, excluding navbar and footer
 const Content = styled.div`
     margin:auto;
-    margin-left:20%;
-    margin-right:20%;
+    margin-left:10%;
+    margin-right:10%;
     background-clip:margin-box;
-    background-color:#f8f9fa;
+    background-color:#2E415F;
     display:flex;
     flex-direction:column;
 

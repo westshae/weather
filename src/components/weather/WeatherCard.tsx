@@ -5,14 +5,17 @@ const StyledDiv = styled.div`
   display:grid;
   grid-template-columns:repeat(6, 1fr);
   gap:2%;
-  background-color:#969696;
+  background-color:#F3F5F5;
   align-items:center;
+  border:none;
+  border-radius:1rem;
 `
 
 const Paragraph = styled.p`
   font-size:1.5em;
   display:grid;
-  background-color:#868686;
+  background-color:#F3F5F5;
+  color:#312E3D;
   justify-content:center;
   align-items:center;
   white-space:nowrap;
@@ -20,7 +23,11 @@ const Paragraph = styled.p`
 
 const Image = styled.img`
   display:grid;
+  
   justify-content:center;
+  align-items:center;
+  margin-left:auto;
+  margin-right:auto;
 `
 
 

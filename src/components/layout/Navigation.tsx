@@ -15,7 +15,7 @@ interface Props{
 //CSS for Navigation Buttons
 const Button = styled.button<Props>`
     background:transparent;
-    color:#f8f8ff;
+    color:#F3F5F5;
     border:none;
     height:4rem;
     font-size:1.5em;
@@ -39,7 +39,7 @@ const Button = styled.button<Props>`
 
 //CSS for entire navigation bar
 const StyledNavigation = styled.nav`
-    background-color:#28375d;
+    background-color:#2E415F;
     height:4rem;
     display:flex;
 `

@@ -5,7 +5,7 @@ import MediaQuery from "react-responsive";
 //CSS for footer
 const StyledFooter = styled.div`
     height:5rem;
-    background-color:#28375d;
+    background-color:#2E415F;
     display:flex;
     justify-content:center;
     align-items:center;
@@ -22,14 +22,15 @@ const StyledFooter = styled.div`
 //CSS for Footer text
 const Paragraph = styled.p`
     text-align:center;
-    color:#f8f9fa;
+    color:#F3F5F5;
+    font-size:1.25em;
 
     margin:0.75rem;
 `
 
 //CSS for anchor text
 const Anchor = styled.a`
-    color:#f8f9fa;
+    color:#F3F5F5;
     height:auto;
 `
 
