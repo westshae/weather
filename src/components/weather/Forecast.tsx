@@ -9,10 +9,10 @@ const StyledDiv = styled.div`
   border:none;
   border-radius:1rem;
 
-  box-shadow: 5px 5px 5px rgba(0,0,0,0.6);
-  -moz-box-shadow: 5px 5px 5px rgba(0,0,0,0.6);
-  -webkit-box-shadow: 5px 5px 5px rgba(0,0,0,0.6);
-  -o-box-shadow: 5px 5px 5px rgba(0,0,0,0.6);
+  box-shadow: 5px 5px 5px #202020;
+  -moz-box-shadow: 5px 5px 5px #202020;
+  -webkit-box-shadow: 5px 5px 5px #202020;
+  -o-box-shadow: 5px 5px 5px #202020;
   border-radius:1rem;
 `
 
