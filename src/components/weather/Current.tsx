@@ -9,6 +9,10 @@ const StyledDiv = styled.div`
   background-color:#F3F5F5;
   align-items:center;
   border:none;
+  box-shadow: 5px 5px 5px rgba(0,0,0,0.6);
+  -moz-box-shadow: 5px 5px 5px rgba(0,0,0,0.6);
+  -webkit-box-shadow: 5px 5px 5px rgba(0,0,0,0.6);
+  -o-box-shadow: 5px 5px 5px rgba(0,0,0,0.6);
   border-radius:1rem;
 `
 
