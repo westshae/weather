@@ -3,8 +3,7 @@ import styled from "styled-components";
 
 const StyledDiv = styled.div`
   display:grid;
-  grid-template-columns:repeat(3, 1fr);
-  grid-template-rows:repeat(2, 1fr);
+  grid-template-rows:repeat(6, 1fr);
   background-color:#F3F5F5;
   align-items:center;
   border:none;
@@ -37,7 +36,6 @@ const WeatherCard = (props:any) =>{
   const [maxtemperature, setMaxtemperature] = useState("");
   const [conditiontext, setConditiontext] = useState("");
   const [conditionlink, setConditionlink] = useState("");
-  const [chanceofrain, setChanceofrain] = useState("");
   const [maxwind, setMaxwind] = useState("");
 
 
@@ -48,19 +46,17 @@ const WeatherCard = (props:any) =>{
     setMaxtemperature(props.data.day.maxtemp_c);
     setConditiontext(props.data.day.condition.text);
     setConditionlink(props.data.day.condition.icon);
-    setChanceofrain(props.data.day.daily_chance_of_rain);
     setMaxwind(props.data.day.maxwind_kph);
   }, [props]);
 
   return(
     <StyledDiv>
-      <Paragraph>{date}</Paragraph>
-      <Paragraph>{humidity}%</Paragraph>
-      <Paragraph>{mintemperature} - {maxtemperature} C </Paragraph>
-      <Paragraph>{conditiontext}</Paragraph>
-      <Paragraph>{chanceofrain}%</Paragraph>
-      <Paragraph>{maxwind}km/h</Paragraph>
       <Image src={conditionlink}/>
+      <Paragraph>Condition: {conditiontext}</Paragraph>
+      <Paragraph>Temperature: {mintemperature} - {maxtemperature} C </Paragraph>
+      <Paragraph>Wind: {maxwind}km/h</Paragraph>
+      <Paragraph>Humidity: {humidity}%</Paragraph>
+      <Paragraph>Date: {date}</Paragraph>
 
     </StyledDiv>
   )
@@ -71,14 +67,13 @@ const Forecast = (props:any) =>{
   useEffect(()=>{
     if(props.forecast != null){
       setDays(props.forecast.forecastday);
-      console.log(props.forecast.forecastday)
     }
   },[props]);
 
   const StyledDiv = styled.div`
     display:grid;
-    grid-row-gap:1rem;
-
+    grid-template-columns:repeat(3, 1fr);
+    grid-column-gap:1rem;
   `
 
   return(
