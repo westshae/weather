@@ -4,7 +4,6 @@ import MediaQuery from "react-responsive";
 import React, {useContext, useState} from "react"
 
 import {Context} from "../../App"
-import { textSpanContainsPosition } from "typescript";
 
 //Interface for props
 interface Props{
@@ -20,6 +19,8 @@ const Button = styled.button<Props>`
     height:4rem;
     font-size:1.5em;
     font-family:Helvetica;
+    margin-left:1rem;
+    margin-right:1rem;
 
     transition:  0.25s ease-out;
 
