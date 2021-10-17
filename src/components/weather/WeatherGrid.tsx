@@ -1,11 +1,13 @@
-import WeatherCard from "../weather/WeatherCard"
 import styled from "styled-components";
-import {useState, useContext} from "react";
+import {useState, useContext, useEffect} from "react";
 import {Context} from "../../App"
 
+import WeatherCard from "../weather/WeatherCard"
+import Current from "../weather/Current";
+
 const StyledDiv = styled.div`
-  display:flex;
-  flex-direction:column;
+  display:grid;
+  grid-template-columns:1fr 1fr;
   gap:0.5rem;
 `
 
@@ -17,6 +19,7 @@ const WeatherGrid = () =>{
   const [windspeed, setWindspeed] = useState(null);
   const [winddirection, setWinddirection] = useState(null);
   const [humidity, setHumidity] = useState(null);
+  const [forecast, setForecast] = useState(null);
 
 
   useContext(Context).then((value:any)=>{
@@ -26,11 +29,19 @@ const WeatherGrid = () =>{
     setWindspeed(value.current.windspeed);
     setWinddirection(value.current.winddirection);
     setHumidity(value.current.humidity);
+    setForecast(value.forecast.forecastday);
   });
+
+  useEffect(()=>{
+    console.log(forecast);
+  },[forecast]);
  return(
    <StyledDiv>
-      <WeatherCard header temperature="Temperature" conditiontext="Conditions" conditionlink="" windspeed="Wind speed" winddirection="Wind direction" humidity="Humidity"/>
-     <WeatherCard temperature={temperature} conditiontext={conditiontext} conditionlink={conditionlink} windspeed={windspeed} winddirection={winddirection} humidity={humidity}/>
+      <Current temperature={temperature} conditiontext={conditiontext} conditionlink={conditionlink} windspeed={windspeed} winddirection={winddirection} humidity={humidity} />
+      <div>
+      <WeatherCard temperature={temperature} conditiontext={conditiontext} conditionlink={conditionlink} windspeed={windspeed} winddirection={winddirection} humidity={humidity}/>
+
+      </div>
    </StyledDiv>
  )
 }
