@@ -40,7 +40,6 @@ const Current = (props:any) =>{
   const [conditiontext, setConditiontext] = useState("");
   const [conditionlink, setConditionlink] = useState("");
   const [windspeed, setWindspeed] = useState("");
-  const [winddirection, setWinddirection] = useState("");
   const [humidity, setHumidity] = useState("");
   const [moonphase, setMoonphase] = useState("");
 
@@ -53,7 +52,6 @@ const Current = (props:any) =>{
       setConditiontext(props.current.condition.text);
       setConditionlink(props.current.condition.icon);
       setWindspeed(props.current.windspeed);
-      setWinddirection(props.current.winddirection);
       setHumidity(props.current.humidity);
       setMoonphase(props.astrology.moon_phase);
     }
@@ -67,7 +65,7 @@ const Current = (props:any) =>{
         
 
         <Paragraph>Temperature: {temperature} C</Paragraph>
-        <Paragraph>Wind speed: {windspeed}km/h {winddirection}</Paragraph>
+        <Paragraph>Wind speed: {windspeed}km/h</Paragraph>
         <Paragraph>Humidity: {humidity}%</Paragraph>
         <Paragraph>Moon: {moonphase}</Paragraph>
         <Paragraph>Current weather, up to date</Paragraph>
