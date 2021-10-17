@@ -1,4 +1,27 @@
 import {useState, useEffect} from "react";
+import styled from "styled-components";
+
+const StyledDiv = styled.div`
+  display:grid;
+  grid-template-columns:repeat(6, 1fr);
+  gap:2%;
+  background-color:#969696;
+  align-items:center;
+`
+
+const Paragraph = styled.p`
+  font-size:1.5em;
+  display:grid;
+  background-color:#868686;
+  justify-content:center;
+  align-items:center;
+  white-space:nowrap;
+`
+
+const Image = styled.img`
+  display:grid;
+  justify-content:center;
+`
 
 
 const Weather = (props:any) =>{
@@ -21,15 +44,14 @@ const Weather = (props:any) =>{
   }, [props]);
 
   return(
-    <div>
-      <h1>{temperature}</h1>
-      <img src={conditionlink}/>
-      <h1>{conditiontext}</h1>
-      <h1>{windspeed}</h1>
-      <h1>{winddirection}</h1>
-      <h1>{humidity}</h1>
-
-    </div>
+    <StyledDiv>
+      <Image src={conditionlink}/>
+      <Paragraph>{conditiontext}</Paragraph>
+      <Paragraph>{temperature}</Paragraph>
+      <Paragraph>{windspeed}</Paragraph>
+      <Paragraph>{winddirection}</Paragraph>
+      <Paragraph>{humidity}</Paragraph>
+    </StyledDiv>
   )
 }
 
