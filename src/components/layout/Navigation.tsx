@@ -94,8 +94,11 @@ const  Navigation = (props:any) => {
         <div>
             <StyledNavigation>
                 <Input callback={props.callback}/>
+                {cityname != "" &&
                 <Button onClick={() => openInNewTab("https://www.google.com/maps/search/?api=1&query=" + cityname)}>{cityname}, {countryname}</Button>   
+}{datetime != "" &&
                 <Button left>{datetime}, {timezone}</Button>
+}
             </StyledNavigation>
         </div>
     )
