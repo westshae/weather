@@ -3,7 +3,7 @@ import styled, {css} from "styled-components";
 import MediaQuery from "react-responsive";
 import React, {useEffect, useState} from "react"
 
-import {Input} from "./Input";
+import Input from "./Input";
 
 // import {Context} from "../layout/Input"
 
