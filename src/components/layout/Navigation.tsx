@@ -45,6 +45,8 @@ const StyledNavigation = styled.nav`
     background-color:#2E415F;
     height:4rem;
     display:flex;
+    margin-left:5%;
+    margin-right:5%;
 `
 
 //CSS for logo
