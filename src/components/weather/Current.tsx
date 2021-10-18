@@ -46,7 +46,7 @@ height:90%;
 const TR = styled.tr`
 
 :nth-child(odd){
-    background-color:#909090;
+    background-color:#d4ebf2;
   }
 `
 

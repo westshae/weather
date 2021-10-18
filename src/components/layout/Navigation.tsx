@@ -58,15 +58,11 @@ const  Navigation = (props:any) => {
     //Stores data from data JSON
     const [cityname, setCityname] = useState("");
     const [countryname, setCountryname] = useState("");
-    const [timezone, setTimezone] = useState("");
-    const [datetime, setDatetime] = useState("");
     
     useEffect(()=>{//If props updates (props.data), update local data from JSON
         if(props.data != undefined){
             setCityname(props.data.city.cityname);
             setCountryname(props.data.city.countryname);
-            setTimezone(props.data.city.timezone);
-            setDatetime(props.data.city.localtime);
         }
     }, [props]);
     
@@ -76,9 +72,6 @@ const  Navigation = (props:any) => {
             {cityname != "" &&//If data recieved, display
             <Button onClick={() => openInNewTab("https://www.google.com/maps/search/?api=1&query=" + cityname)}>{cityname}, {countryname}</Button>   
             }
-            {/* {datetime != "" &&//If data recieved, display
-            <Button left>{datetime.split(" ")[0]}</Button>
-            } */}
         </StyledNavigation>
     )
 }

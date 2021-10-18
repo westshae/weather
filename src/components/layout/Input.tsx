@@ -12,6 +12,8 @@ const InputButton = styled.input`
   padding:0 0 0 0 ;
   outline:none;
   width:15%;
+  font-size:1.8rem;
+
 `
 
 const InputText = styled.input`
@@ -20,6 +22,7 @@ const InputText = styled.input`
   outline:none;
   padding:0 0 0 0;
   width:85%;
+  font-size:1.8rem;
 `
 
 const Input = (props:any) =>{
