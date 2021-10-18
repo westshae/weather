@@ -2,7 +2,6 @@ import {useState, createContext, useEffect} from "react";
 import Axios from "axios";
 
 let auto = "New York";
-
 const getWeather = async () =>{
   let data;
   try{
@@ -16,6 +15,10 @@ const getWeather = async () =>{
 
 const Input = (props:any) =>{
   const [value, setValue] = useState("");
+
+  getWeather().then((value:any)=>{
+    props.callback(value);
+  })
   
   const handleChange = (event:any) => {    
     setValue(event.target.value);  
@@ -35,11 +38,9 @@ const Input = (props:any) =>{
 
   return(
     <form onSubmit={handleSubmit}>
-        <label>
-          Essay:
-          <textarea value={value} onChange={handleChange} />        </label>
-        <input type="submit" value="Submit" />
-      </form>
+      <input type="text" value={value} onChange={handleChange} />
+      <input type="submit" value="Submit" />
+    </form>
   );
 }
 
