@@ -27,7 +27,6 @@ const Paragraph = styled.p`
 
 const Image = styled.img`
   display:grid;
-  
   justify-content:center;
   align-items:center;
   margin-left:auto;
@@ -36,6 +35,7 @@ const Image = styled.img`
 
 
 const Current = (props:any) =>{
+  //Locally store variables
   const [temperature, setTemperature] = useState("");
   const [conditiontext, setConditiontext] = useState("");
   const [conditionlink, setConditionlink] = useState("");
@@ -46,7 +46,7 @@ const Current = (props:any) =>{
 
 
 
-  useEffect(()=>{
+  useEffect(()=>{//If props update, update local variables
     if(props.current != null && props.astrology != null){
       setTemperature(props.current.temp);
       setConditiontext(props.current.condition.text);
@@ -59,7 +59,7 @@ const Current = (props:any) =>{
 
   return(
     <div>
-      {conditionlink != "" &&
+      {conditionlink != "" &&//If data exists, display it
       <StyledDiv>
         <Image src={conditionlink}/>
         <Paragraph>Conditions: {conditiontext}</Paragraph>
