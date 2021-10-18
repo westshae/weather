@@ -59,6 +59,7 @@ const Current = (props:any) =>{
 
   return(
     <div>
+      {conditionlink != "" &&
       <StyledDiv>
         <Image src={conditionlink}/>
         <Paragraph>Conditions: {conditiontext}</Paragraph>
@@ -70,8 +71,7 @@ const Current = (props:any) =>{
         <Paragraph>Moon: {moonphase}</Paragraph>
         <Paragraph>Current weather, up to date</Paragraph>
       </StyledDiv>
-      <StyledDiv>
-      </StyledDiv>
+      }
     </div>
   )
 }
