@@ -3,6 +3,7 @@ import styled from "styled-components";
 import Axios from "axios";
 
 const Form = styled.form`
+  width:95%;
 `
 
 const InputButton = styled.input`

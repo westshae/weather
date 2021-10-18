@@ -3,7 +3,7 @@ import styled from "styled-components";
 
 const StyledDiv = styled.div`
   display:grid;
-  grid-template-rows:1fr;
+  grid-template-rows:2fr 8fr;
   background-color:#F3F5F5;
   align-items:center;
   border:none;
@@ -25,12 +25,36 @@ const Paragraph = styled.p`
 
 const Image = styled.img`
   display:grid;
-  justify-content:center;
-  align-items:center;
   margin-left:auto;
-  margin-right:auto;
+  height:100%;
 `
 
+const Header = styled.div`
+  display:flex;
+`
+
+const H1 = styled.h1`
+  padding:none;
+  padding-left:1rem;
+`
+
+const Table = styled.table`
+border-collapse:collapse;
+height:90%;
+`
+
+const TR = styled.tr`
+
+:nth-child(odd){
+    background-color:#909090;
+  }
+`
+
+const TD = styled.td`
+  font-size:120%;
+  text-align:center;
+
+`
 
 const Current = (props:any) =>{
   //Locally store variables
@@ -41,7 +65,7 @@ const Current = (props:any) =>{
   const [humidity, setHumidity] = useState("");
   const [moonphase, setMoonphase] = useState("");
 
-
+  
 
 
   useEffect(()=>{//If props update, update local variables
@@ -59,15 +83,34 @@ const Current = (props:any) =>{
     <div>
       {conditionlink != "" &&//If data exists, display it
       <StyledDiv>
+        <Header>
+        <H1>Weather Information</H1>
         <Image src={conditionlink}/>
-        <Paragraph>Conditions: {conditiontext}</Paragraph>
-        
 
-        <Paragraph>Temperature: {temperature} C</Paragraph>
-        <Paragraph>Wind speed: {windspeed}km/h</Paragraph>
-        <Paragraph>Humidity: {humidity}%</Paragraph>
-        <Paragraph>Moon: {moonphase}</Paragraph>
-        <Paragraph>Current weather, up to date</Paragraph>
+      </Header>
+        {/* <Image src={conditionlink}/> */}
+          <Table>
+            <TR>
+              <TD>Condition</TD>
+              <TD>{conditiontext}</TD>
+            </TR>
+            <TR>
+              <TD>Temperature</TD>
+              <TD>{temperature} C</TD>
+            </TR>
+            <TR>
+              <TD>Wind</TD>
+              <TD>{windspeed}km/h</TD>
+            </TR>
+            <TR>
+              <TD>Humidity</TD>
+              <TD>{humidity}%</TD>
+            </TR>
+            <TR>
+              <TD>Date</TD>
+              <TD>Realtime</TD>
+            </TR>
+          </Table>
       </StyledDiv>
       }
     </div>

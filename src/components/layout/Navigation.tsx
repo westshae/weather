@@ -15,8 +15,7 @@ const Button = styled.button<Props>`
     background:transparent;
     color:#F3F5F5;
     border:none;
-    height:4rem;
-    font-size:1.5em;
+    font-size:3.5rem;
     font-family:Helvetica;
     margin-left:1rem;
     margin-right:1rem;

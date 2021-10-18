@@ -4,7 +4,7 @@ import Current from "./Current";
 
 const StyledDiv = styled.div`
   display:grid;
-  grid-template-rows:repeat(6, 1fr);
+  grid-template-rows:2fr 8fr;
   background-color:#F3F5F5;
   align-items:center;
   border:none;
@@ -17,39 +17,43 @@ const StyledDiv = styled.div`
   border-radius:1rem;
 `
 
-// const Paragraph = styled.p`
-//   font-size:1.5em;
-//   display:grid;
-//   color:#312E3D;
-//   justify-content:center;
-//   align-items:center;
-//   white-space:nowrap;
-// `
 const Table = styled.table`
-
+border-collapse:collapse;
+height:90%;
 `
 
 const TR = styled.tr`
 
+:nth-child(odd){
+    background-color:#909090;
+  }
 `
 
 const TD = styled.td`
+  font-size:120%;
+  text-align:center;
 
 `
 
 const Image = styled.img`
   display:grid;
-  
-  justify-content:center;
-  align-items:center;
   margin-left:auto;
-  margin-right:auto;
+  height:100%;
+`
+
+const Header = styled.div`
+  display:flex;
+`
+
+const H1 = styled.h1`
+  padding:none;
+  padding-left:1rem;
 `
 
 
 const WeatherCard = (props:any) =>{
   //Stores JSON data locally in component
-  const [date, seTDate] = useState("");
+  const [date, setDate] = useState("");
   const [humidity, setHumidity] = useState("");
   const [mintemperature, setMintemperature] = useState("");
   const [maxtemperature, setMaxtemperature] = useState("");
@@ -59,7 +63,7 @@ const WeatherCard = (props:any) =>{
 
 
   useEffect(()=>{//If props updates, update local variables
-    seTDate(props.data.date);
+    setDate(props.data.date);
     setHumidity(props.data.day.avghumidity);
     setMintemperature(props.data.day.mintemp_c);
     setMaxtemperature(props.data.day.maxtemp_c);
@@ -70,7 +74,11 @@ const WeatherCard = (props:any) =>{
 
   return(
     <StyledDiv>
-      <Image src={conditionlink}/>
+      <Header>
+        <H1>Weather Information</H1>
+        <Image src={conditionlink}/>
+
+      </Header>
       <Table>
         <TR>
           <TD>Condition</TD>
@@ -108,8 +116,9 @@ const Forecast = (props:any) =>{
 
   const StyledDiv = styled.div`
     display:grid;
-    grid-template-columns:repeat(4, 1fr);
-    grid-column-gap:1rem;
+    grid-template-columns:repeat(2, 1fr);
+    grid-column-gap:3rem;
+    grid-row-gap:3rem;
   `
 
   return(

@@ -12,6 +12,7 @@ const App = () => {
 
   return (
     <Container>
+        <p/>
         <Navigation data={data} callback={setData}/>
         <p/>
           <Content>
