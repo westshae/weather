@@ -3,7 +3,7 @@ import styled, {css} from "styled-components";
 import MediaQuery from "react-responsive";
 import React, {useContext, useState} from "react"
 
-import {Context} from "../../App"
+// import {Context} from "../layout/Input"
 
 //Interface for props
 interface Props{
@@ -78,12 +78,12 @@ const  Navigation = () => {
     const [datetime, setDatetime] = useState("");
     
     
-    useContext(Context).then((value:any)=>{
-        setCityname(value.city.cityname);
-        setCountryname(value.city.countryname);
-        setTimezone(value.city.timezone);
-        setDatetime(value.city.localtime);
-    });
+    // useContext(Context).then((value:any)=>{
+    //     setCityname(value.city.cityname);
+    //     setCountryname(value.city.countryname);
+    //     setTimezone(value.city.timezone);
+    //     setDatetime(value.city.localtime);
+    // });
     
     return (
         <div>

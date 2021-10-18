@@ -1,6 +1,6 @@
 import styled from "styled-components";
 import {useState, useContext, useEffect} from "react";
-import {Context} from "../../App"
+// import {Context} from "../layout/Input"
 
 // import WeatherCard from "./Forecast"
 import Forecast from "../weather/Forecast";
@@ -13,16 +13,28 @@ const StyledDiv = styled.div`
 `
 
 
-const WeatherGrid = () =>{
+const WeatherGrid = (props:any) =>{
   const [current, setCurrent] = useState(null);
   const [forecast, setForecast] = useState(null);
   const [astrology, setAstrology] = useState(null);
 
-  useContext(Context).then((value:any)=>{
-    setCurrent(value.current);
-    setForecast(value.forecast);
-    setAstrology(value.astrology);
-  });
+  // useContext(Context).then((value:any)=>{
+  //   setCurrent(value.current);
+  //   setForecast(value.forecast);
+  //   setAstrology(value.astrology);
+  // });
+
+  // useEffect(()=>{
+    
+  // }, [props]);
+  let value = props.data;
+    if(value != undefined){
+      if(value.current != null && value.astrology != null){
+        setCurrent(value.current);
+        setForecast(value.forecast);
+        setAstrology(value.astrology);
+      }
+    }
 
  return(
    <StyledDiv>
