@@ -1,8 +1,6 @@
 import styled from "styled-components";
-import {useState, useContext, useEffect} from "react";
-// import {Context} from "../layout/Input"
+import {useState, useEffect} from "react";
 
-// import WeatherCard from "./Forecast"
 import Forecast from "../weather/Forecast";
 import Current from "../weather/Current";
 
