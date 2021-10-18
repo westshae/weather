@@ -2,11 +2,10 @@ import styled from "styled-components";
 import {useState, useEffect} from "react";
 
 import Forecast from "../weather/Forecast";
-import Current from "../weather/Current";
 
 const StyledDiv = styled.div`
   display:grid;
-  grid-template-columns:2fr 5fr;
+  grid-template-columns:1fr;
   gap:0.5rem;
 `
 
@@ -26,8 +25,7 @@ const WeatherGrid = (props:any) =>{
 
  return(
    <StyledDiv>
-      <Current current={current} astrology={astrology}/>
-      <Forecast forecast={forecast}/>
+      <Forecast forecast={forecast} current={current} astrology={astrology}/>
    </StyledDiv>
  )
 }

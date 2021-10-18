@@ -4,8 +4,6 @@ import styled from "styled-components";
 const StyledDiv = styled.div`
   display:grid;
   grid-template-rows:1fr;
-  margin-left:10%;
-  margin-right:10%;
   background-color:#F3F5F5;
   align-items:center;
   border:none;

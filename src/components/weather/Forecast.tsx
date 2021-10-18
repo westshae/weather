@@ -1,5 +1,6 @@
 import {useState, useEffect} from "react";
 import styled from "styled-components";
+import Current from "./Current";
 
 const StyledDiv = styled.div`
   display:grid;
@@ -79,12 +80,13 @@ const Forecast = (props:any) =>{
 
   const StyledDiv = styled.div`
     display:grid;
-    grid-template-columns:repeat(3, 1fr);
+    grid-template-columns:repeat(4, 1fr);
     grid-column-gap:1rem;
   `
 
   return(
     <StyledDiv>
+      <Current current={props.current} astrology={props.astrology}/>
       {//For each day of data, display
         days.map((day:any, index:number)=>{
           return(<WeatherCard key={index} data={day}/>)
