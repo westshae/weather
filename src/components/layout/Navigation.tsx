@@ -44,7 +44,7 @@ const StyledNavigation = styled.nav`
     margin-right:5%;
 
     display:grid;
-    grid-template-columns:repeat(3, 1fr);
+    grid-template-columns:repeat(2, 1fr);
 `
 
 //Prevents bad security, thanks stackoverflow
@@ -77,9 +77,9 @@ const  Navigation = (props:any) => {
             {cityname != "" &&//If data recieved, display
             <Button onClick={() => openInNewTab("https://www.google.com/maps/search/?api=1&query=" + cityname)}>{cityname}, {countryname}</Button>   
             }
-            {datetime != "" &&//If data recieved, display
-            <Button left>{datetime}, {timezone}</Button>
-            }
+            {/* {datetime != "" &&//If data recieved, display
+            <Button left>{datetime.split(" ")[0]}</Button>
+            } */}
         </StyledNavigation>
     )
 }

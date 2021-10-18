@@ -60,11 +60,28 @@ const WeatherCard = (props:any) =>{
   return(
     <StyledDiv>
       <Image src={conditionlink}/>
-      <Paragraph>Condition: {conditiontext}</Paragraph>
-      <Paragraph>Temperature: {mintemperature} - {maxtemperature} C </Paragraph>
-      <Paragraph>Wind: {maxwind}km/h</Paragraph>
-      <Paragraph>Humidity: {humidity}%</Paragraph>
-      <Paragraph>Date: {date}</Paragraph>
+      <table>
+        <tr>
+          <td>Condition</td>
+          <td>{conditiontext}</td>
+        </tr>
+        <tr>
+          <td>Temperature</td>
+          <td>{mintemperature} - {maxtemperature} C</td>
+        </tr>
+        <tr>
+          <td>Wind</td>
+          <td>{maxwind}km/h</td>
+        </tr>
+        <tr>
+          <td>Humidity</td>
+          <td>{humidity}%</td>
+        </tr>
+        <tr>
+          <td>Date</td>
+          <td>{date}</td>
+        </tr>
+      </table>
     </StyledDiv>
   )
 }
