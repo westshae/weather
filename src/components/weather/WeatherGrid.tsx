@@ -18,23 +18,14 @@ const WeatherGrid = (props:any) =>{
   const [forecast, setForecast] = useState(null);
   const [astrology, setAstrology] = useState(null);
 
-  // useContext(Context).then((value:any)=>{
-  //   setCurrent(value.current);
-  //   setForecast(value.forecast);
-  //   setAstrology(value.astrology);
-  // });
-
-  // useEffect(()=>{
-    
-  // }, [props]);
-  let value = props.data;
-    if(value != undefined){
-      if(value.current != null && value.astrology != null){
-        setCurrent(value.current);
-        setForecast(value.forecast);
-        setAstrology(value.astrology);
-      }
+  useEffect(()=>{
+    if(props.data != undefined){
+      setCurrent(props.data.current);
+      setForecast(props.data.forecast);
+      setAstrology(props.data.astrology);
     }
+  }, [props]);
+  
 
  return(
    <StyledDiv>

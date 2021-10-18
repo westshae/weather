@@ -17,10 +17,13 @@ const getWeather = async () =>{
 const Input = (props:any) =>{
   const [value, setValue] = useState("");
 
-  getWeather().then((test:any)=>{
-    console.log("REEEE:"+test);
-    props.callback(test);
-  })
+  // getWeather().then((test:any)=>{
+  //   console.log("WOT")
+  //   console.log(test);
+  //   props.callback(test);
+  // })
+  // props.callback(getWeather());
+  // console.log(getWeather());
 
   
   const handleChange = (event:any) => {    
@@ -28,10 +31,10 @@ const Input = (props:any) =>{
   }
 
   const handleSubmit = (event:any) => {
-
     event.preventDefault();
-    props.callback(getWeather());
-
+    getWeather().then((test:any)=>{
+      props.callback(test);
+    })
   }
 
   useEffect(()=>{

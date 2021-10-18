@@ -10,26 +10,12 @@ import {Input} from "./components/layout/Input";
 
 const App = () => {
   const [data, setData] = useState();
-  const updateData = (value:any) =>{
-    console.log("CALLBACK!");
-    console.log(value);
-    setData(value);
-  }
-  // const [location, setLocation] = useState("");
-
-  // useEffect(()=>{
-  //   setLocation("test");
-  //   console.log("treee");
-  // }, [location]);
   
-  useEffect(()=>{
-    console.log(data);
-  }, [data]);
   return (
     <Container>
         <Navigation/>
           <Content>
-            <Input callback={() => updateData}/>
+            <Input callback={setData}/>
             <WeatherGrid data={data}/>
           </Content>
         <p/>
