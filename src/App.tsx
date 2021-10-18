@@ -1,4 +1,4 @@
-import React, {useState, useContext, createContext, useEffect} from 'react';
+import {useState} from 'react';
 
 //Component imports
 import Container from './components/layout/Container';
@@ -8,7 +8,7 @@ import Footer from './components/layout/Footer';
 import WeatherGrid from "./components/weather/WeatherGrid";
 
 const App = () => {
-  const [data, setData] = useState();
+  const [data, setData] = useState();//Stores weather JSON data
 
   return (
     <Container>
