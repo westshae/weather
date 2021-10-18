@@ -1,14 +1,11 @@
 //Package imports
 import styled, {css} from "styled-components";
-import MediaQuery from "react-responsive";
-import React, {useEffect, useState} from "react"
+import {useEffect, useState} from "react"
 
+//Component imports
 import Input from "./Input";
 
-// import {Context} from "../layout/Input"
-
-//Interface for props
-interface Props{
+interface Props{//Interface for Button
   left?: any;
 }
 
@@ -37,35 +34,15 @@ const Button = styled.button<Props>`
             background-color: #181b27;
         }
     }
-    
 `
 
 //CSS for entire navigation bar
 const StyledNavigation = styled.nav`
     background-color:#2E415F;
     height:4rem;
-    /* display:flex; */
     margin-left:5%;
     margin-right:5%;
 
-    display:grid;
-    grid-template-columns:repeat(3, 1fr);
-`
-
-//CSS for logo
-const Image = styled.img`
-    //Desktop
-    @media only screen 
-    and (min-device-width: 1025px){
-            padding-left:1rem;
-            padding-right:1rem;
-            height:90%;
-        
-    }
-`
-
-//CSS for Navigation Button Container
-const StyledDiv = styled.div`
     display:grid;
     grid-template-columns:repeat(3, 1fr);
 `
@@ -79,12 +56,13 @@ const openInNewTab = (url:string) => {
 
 //Component returned
 const  Navigation = (props:any) => {   
+    //Stores data from data JSON
     const [cityname, setCityname] = useState("");
     const [countryname, setCountryname] = useState("");
     const [timezone, setTimezone] = useState("");
     const [datetime, setDatetime] = useState("");
     
-    useEffect(()=>{
+    useEffect(()=>{//If props updates (props.data), update local data from JSON
         if(props.data != undefined){
             setCityname(props.data.city.cityname);
             setCountryname(props.data.city.countryname);
@@ -94,18 +72,16 @@ const  Navigation = (props:any) => {
     }, [props]);
     
     return (
-        <div>
-            <StyledNavigation>
-                <Input callback={props.callback}/>
-                {cityname != "" &&
-                <Button onClick={() => openInNewTab("https://www.google.com/maps/search/?api=1&query=" + cityname)}>{cityname}, {countryname}</Button>   
-}{datetime != "" &&
-                <Button left>{datetime}, {timezone}</Button>
-}
-            </StyledNavigation>
-        </div>
+        <StyledNavigation>
+            <Input callback={props.callback}/>
+            {cityname != "" &&//If data recieved, display
+            <Button onClick={() => openInNewTab("https://www.google.com/maps/search/?api=1&query=" + cityname)}>{cityname}, {countryname}</Button>   
+            }
+            {datetime != "" &&//If data recieved, display
+            <Button left>{datetime}, {timezone}</Button>
+            }
+        </StyledNavigation>
     )
-    
 }
 
 export default Navigation;
