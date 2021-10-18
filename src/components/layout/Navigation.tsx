@@ -1,7 +1,7 @@
 //Package imports
 import styled, {css} from "styled-components";
 import MediaQuery from "react-responsive";
-import React, {useContext, useState} from "react"
+import React, {useEffect, useState} from "react"
 
 // import {Context} from "../layout/Input"
 
@@ -71,19 +71,20 @@ const openInNewTab = (url:string) => {
 
 
 //Component returned
-const  Navigation = () => {   
+const  Navigation = (props:any) => {   
     const [cityname, setCityname] = useState("");
     const [countryname, setCountryname] = useState("");
     const [timezone, setTimezone] = useState("");
     const [datetime, setDatetime] = useState("");
     
-    
-    // useContext(Context).then((value:any)=>{
-    //     setCityname(value.city.cityname);
-    //     setCountryname(value.city.countryname);
-    //     setTimezone(value.city.timezone);
-    //     setDatetime(value.city.localtime);
-    // });
+    useEffect(()=>{
+        if(props.data != undefined){
+            setCityname(props.data.city.cityname);
+            setCountryname(props.data.city.countryname);
+            setTimezone(props.data.city.timezone);
+            setDatetime(props.data.city.localtime);
+        }
+    }, [props]);
     
     return (
         <div>

@@ -10,10 +10,10 @@ import {Input} from "./components/layout/Input";
 
 const App = () => {
   const [data, setData] = useState();
-  
+
   return (
     <Container>
-        <Navigation/>
+        <Navigation data={data}/>
           <Content>
             <Input callback={setData}/>
             <WeatherGrid data={data}/>
