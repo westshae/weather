@@ -36,6 +36,7 @@ const Image = styled.img`
 
 
 const WeatherCard = (props:any) =>{
+  //Stores JSON data locally in component
   const [date, setDate] = useState("");
   const [humidity, setHumidity] = useState("");
   const [mintemperature, setMintemperature] = useState("");
@@ -45,7 +46,7 @@ const WeatherCard = (props:any) =>{
   const [maxwind, setMaxwind] = useState("");
 
 
-  useEffect(()=>{
+  useEffect(()=>{//If props updates, update local variables
     setDate(props.data.date);
     setHumidity(props.data.day.avghumidity);
     setMintemperature(props.data.day.mintemp_c);
@@ -63,14 +64,14 @@ const WeatherCard = (props:any) =>{
       <Paragraph>Wind: {maxwind}km/h</Paragraph>
       <Paragraph>Humidity: {humidity}%</Paragraph>
       <Paragraph>Date: {date}</Paragraph>
-
     </StyledDiv>
   )
 }
 
 const Forecast = (props:any) =>{
-  const [days, setDays] = useState([]);
-  useEffect(()=>{
+  const [days, setDays] = useState([]);//Stores all forecast days
+
+  useEffect(()=>{//If props data updates, update local variables
     if(props.forecast != null){
       setDays(props.forecast.forecastday);
     }
@@ -80,15 +81,11 @@ const Forecast = (props:any) =>{
     display:grid;
     grid-template-columns:repeat(3, 1fr);
     grid-column-gap:1rem;
-
-  
-
-
   `
 
   return(
     <StyledDiv>
-      {
+      {//For each day of data, display
         days.map((day:any, index:number)=>{
           return(<WeatherCard key={index} data={day}/>)
         })
