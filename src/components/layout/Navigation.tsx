@@ -44,9 +44,12 @@ const Button = styled.button<Props>`
 const StyledNavigation = styled.nav`
     background-color:#2E415F;
     height:4rem;
-    display:flex;
+    /* display:flex; */
     margin-left:5%;
     margin-right:5%;
+
+    display:grid;
+    grid-template-columns:repeat(3, 1fr);
 `
 
 //CSS for logo
@@ -64,7 +67,7 @@ const Image = styled.img`
 //CSS for Navigation Button Container
 const StyledDiv = styled.div`
     display:grid;
-    grid-template-columns:repeat(5, 1fr);
+    grid-template-columns:repeat(3, 1fr);
 `
 
 //Prevents bad security, thanks stackoverflow

@@ -14,6 +14,7 @@ const App = () => {
   return (
     <Container>
         <Navigation data={data} callback={setData}/>
+        <p/>
           <Content>
             <WeatherGrid data={data}/>
           </Content>
