@@ -1,5 +1,17 @@
-import {useState, createContext, useEffect} from "react";
+import {useState, useEffect} from "react";
+import styled from "styled-components";
 import Axios from "axios";
+
+const Form = styled.form`
+`
+
+const InputButton = styled.input`
+  height:100%;
+`
+
+const InputText = styled.input`
+  height:100%;
+`
 
 let auto = "New York";
 const getWeather = async () =>{
@@ -33,10 +45,10 @@ const Input = (props:any) =>{
 
 
   return(
-    <form onSubmit={handleSubmit}>
-      <input type="text" value={value} onChange={handleChange} />
-      <input type="submit" value="Submit" />
-    </form>
+    <Form onSubmit={handleSubmit}>
+      <InputText type="text" value={value} onChange={handleChange} />
+      <InputButton type="submit" value="Submit" />
+    </Form>
   );
 }
 
