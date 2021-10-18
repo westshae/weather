@@ -17,13 +17,24 @@ const StyledDiv = styled.div`
   border-radius:1rem;
 `
 
-const Paragraph = styled.p`
-  font-size:1.5em;
-  display:grid;
-  color:#312E3D;
-  justify-content:center;
-  align-items:center;
-  white-space:nowrap;
+// const Paragraph = styled.p`
+//   font-size:1.5em;
+//   display:grid;
+//   color:#312E3D;
+//   justify-content:center;
+//   align-items:center;
+//   white-space:nowrap;
+// `
+const Table = styled.table`
+
+`
+
+const TR = styled.tr`
+
+`
+
+const TD = styled.td`
+
 `
 
 const Image = styled.img`
@@ -38,7 +49,7 @@ const Image = styled.img`
 
 const WeatherCard = (props:any) =>{
   //Stores JSON data locally in component
-  const [date, setDate] = useState("");
+  const [date, seTDate] = useState("");
   const [humidity, setHumidity] = useState("");
   const [mintemperature, setMintemperature] = useState("");
   const [maxtemperature, setMaxtemperature] = useState("");
@@ -48,7 +59,7 @@ const WeatherCard = (props:any) =>{
 
 
   useEffect(()=>{//If props updates, update local variables
-    setDate(props.data.date);
+    seTDate(props.data.date);
     setHumidity(props.data.day.avghumidity);
     setMintemperature(props.data.day.mintemp_c);
     setMaxtemperature(props.data.day.maxtemp_c);
@@ -60,28 +71,28 @@ const WeatherCard = (props:any) =>{
   return(
     <StyledDiv>
       <Image src={conditionlink}/>
-      <table>
-        <tr>
-          <td>Condition</td>
-          <td>{conditiontext}</td>
-        </tr>
-        <tr>
-          <td>Temperature</td>
-          <td>{mintemperature} - {maxtemperature} C</td>
-        </tr>
-        <tr>
-          <td>Wind</td>
-          <td>{maxwind}km/h</td>
-        </tr>
-        <tr>
-          <td>Humidity</td>
-          <td>{humidity}%</td>
-        </tr>
-        <tr>
-          <td>Date</td>
-          <td>{date}</td>
-        </tr>
-      </table>
+      <Table>
+        <TR>
+          <TD>Condition</TD>
+          <TD>{conditiontext}</TD>
+        </TR>
+        <TR>
+          <TD>Temperature</TD>
+          <TD>{mintemperature} - {maxtemperature} C</TD>
+        </TR>
+        <TR>
+          <TD>Wind</TD>
+          <TD>{maxwind}km/h</TD>
+        </TR>
+        <TR>
+          <TD>Humidity</TD>
+          <TD>{humidity}%</TD>
+        </TR>
+        <TR>
+          <TD>Date</TD>
+          <TD>{date}</TD>
+        </TR>
+      </Table>
     </StyledDiv>
   )
 }
