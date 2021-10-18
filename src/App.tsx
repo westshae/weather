@@ -13,9 +13,8 @@ const App = () => {
 
   return (
     <Container>
-        <Navigation data={data}/>
+        <Navigation data={data} callback={setData}/>
           <Content>
-            <Input callback={setData}/>
             <WeatherGrid data={data}/>
           </Content>
         <p/>

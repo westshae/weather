@@ -3,6 +3,8 @@ import styled, {css} from "styled-components";
 import MediaQuery from "react-responsive";
 import React, {useEffect, useState} from "react"
 
+import {Input} from "./Input";
+
 // import {Context} from "../layout/Input"
 
 //Interface for props
@@ -89,6 +91,7 @@ const  Navigation = (props:any) => {
     return (
         <div>
             <StyledNavigation>
+                <Input callback={props.callback}/>
                 <Button onClick={() => openInNewTab("https://www.google.com/maps/search/?api=1&query=" + cityname)}>{cityname}, {countryname}</Button>   
                 <Button left>{datetime}, {timezone}</Button>
             </StyledNavigation>
