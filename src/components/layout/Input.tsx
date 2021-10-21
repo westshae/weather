@@ -43,7 +43,7 @@ const Input = (props:any) =>{
   const getWeather = async () =>{
     let data;
     try{
-      data = await (await Axios.get("http://localhost:5000/weather?location=" + location)).data;//Waits for results, then returns weather in single JSON
+      data = await (await Axios.get("https://api.westshae.com/weather?location=" + location)).data;//Waits for results, then returns weather in single JSON
     }
     catch(error){
       console.error(error);

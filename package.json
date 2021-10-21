@@ -1,6 +1,6 @@
 {
   "homepage": "http://westshae.com/weather/",
-  "name": "weatherapp",
+  "name": "weather",
   "version": "0.0",
   "private": true,
   "dependencies": {
