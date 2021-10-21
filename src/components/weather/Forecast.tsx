@@ -8,13 +8,12 @@ const StyledDiv = styled.div`
   background-color:#F3F5F5;
   align-items:center;
   border:none;
-  border-radius:1rem;
+  border-radius:0.5rem;
 
   box-shadow: 5px 5px 5px #202020;
   -moz-box-shadow: 5px 5px 5px #202020;
   -webkit-box-shadow: 5px 5px 5px #202020;
   -o-box-shadow: 5px 5px 5px #202020;
-  border-radius:1rem;
 `
 
 const Table = styled.table`
@@ -116,9 +115,12 @@ const Forecast = (props:any) =>{
 
   const StyledDiv = styled.div`
     display:grid;
-    grid-template-columns:repeat(2, 1fr);
+    grid-template-columns:1fr;
     grid-column-gap:3rem;
     grid-row-gap:3rem;
+    @media screen and (min-width: 1024px){//Desktop
+    grid-template-columns:repeat(4, 1fr);
+    }
   `
 
   return(

@@ -11,7 +11,7 @@ const StyledDiv = styled.div`
   -moz-box-shadow: 5px 5px 5px #202020;
   -webkit-box-shadow: 5px 5px 5px #202020;
   -o-box-shadow: 5px 5px 5px #202020;
-  border-radius:1rem;
+  border-radius:0.5rem;
 `
 
 const Paragraph = styled.p`
