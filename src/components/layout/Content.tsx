@@ -10,6 +10,10 @@ const Content = styled.div`
     background-color:#2E415F;
     display:flex;
     flex-direction:column;
+    @media screen and (max-device-width: 480px) and (orientation: portrait){//Phone
+        margin:1rem;
+    }
+
 `
 
 export default Content;

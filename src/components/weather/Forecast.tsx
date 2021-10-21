@@ -46,7 +46,7 @@ const Header = styled.div`
 
 const H1 = styled.h1`
   padding:none;
-  padding-left:1rem;
+  /* padding-left:1rem; */
 `
 
 
