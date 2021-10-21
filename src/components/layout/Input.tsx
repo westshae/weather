@@ -10,26 +10,9 @@ const InputButton = styled.input`
   height:100%;
   width:fit-content;
   border:none;
-  /* padding:0 1rem 0 1rem; */
-  padding:0 0 0 0;
-  /* background-color:#179717; */
+  padding:0.5rem 1rem 0.5rem 1rem;
   outline:none;
-  @media screen and (max-device-width: 480px) and (orientation: portrait){//Phone
-        padding-left:1rem;
-        padding-right:1rem;
-        padding-top:0.5rem;
-        padding-bottom:0.5rem;
-        font-size:1.5rem;
-
-  }
-  
-  @media screen and (min-device-width: 768px) and (max-device-width: 1024px){//Tablet
-  
-  }
-  
-  @media screen and (min-width: 1024px){//Desktop
-
-  }
+  font-size:1.5rem;
 `
 
 const InputText = styled.input`
@@ -37,19 +20,8 @@ const InputText = styled.input`
   width:100%;
   border:none;
   outline:none;
-  padding:0 0 0 0;
-
-  @media screen and (max-device-width: 480px) and (orientation: portrait){//Phone
-        font-size:1.5rem;
-      }
-  
-      @media screen and (min-device-width: 768px) and (max-device-width: 1024px){//Tablet
-  
-      }
-  
-      @media screen and (min-width: 1024px){//Desktop
-  
-      }
+  padding:0;
+  font-size:1.5rem;
 `
 
 const Input = (props:any) =>{
