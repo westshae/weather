@@ -15,34 +15,14 @@ const Button = styled.button<Props>`
     background:transparent;
     color:#F3F5F5;
     border:none;
-    /* font-size:3.5rem; */
-    /* font-family:Helvetica; */
-    /* margin-left:1rem; */
-    /* margin-right:1rem; */
 
     transition:  0.25s ease-out;
-
-    /* ${props => props.left && css`
-        margin-left:auto;
-    `}; */
-
-    @media screen and (max-device-width: 480px) and (orientation: portrait){//Phone
-        
-    }
-
-    @media screen and (min-device-width: 768px) and (max-device-width: 1024px){//Tablet
-
-    }
-
-    @media screen and (min-width: 1024px){//Desktop
-
-    }
+    font-size:2rem;
 `
 
 //CSS for entire navigation bar
 const StyledNavigation = styled.nav`
     background-color:#2E415F;
-    /* height:4rem; */
     display:grid;
 
 
