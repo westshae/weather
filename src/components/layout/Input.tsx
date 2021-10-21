@@ -3,26 +3,34 @@ import styled from "styled-components";
 import Axios from "axios";
 
 const Form = styled.form`
-  width:95%;
+  display:flex;
 `
 
 const InputButton = styled.input`
   height:100%;
-  border:0;
-  padding:0 0 0 0 ;
+  width:fit-content;
+  border:none;
+  padding:0 0 0 0;
   outline:none;
-  width:15%;
-  font-size:1.8rem;
+  @media screen and (max-device-width: 480px) and (orientation: portrait){//Phone
+        
+  }
+  
+  @media screen and (min-device-width: 768px) and (max-device-width: 1024px){//Tablet
+  
+  }
+  
+  @media screen and (min-width: 1024px){//Desktop
 
+  }
 `
 
 const InputText = styled.input`
   height:100%;
-  border:0;
+  width:100%;
+  border:none;
   outline:none;
   padding:0 0 0 0;
-  width:85%;
-  font-size:1.8rem;
 `
 
 const Input = (props:any) =>{
