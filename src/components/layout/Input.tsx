@@ -10,10 +10,17 @@ const InputButton = styled.input`
   height:100%;
   width:fit-content;
   border:none;
+  /* padding:0 1rem 0 1rem; */
   padding:0 0 0 0;
+  /* background-color:#179717; */
   outline:none;
   @media screen and (max-device-width: 480px) and (orientation: portrait){//Phone
-        
+        padding-left:1rem;
+        padding-right:1rem;
+        padding-top:0.5rem;
+        padding-bottom:0.5rem;
+        font-size:1.5rem;
+
   }
   
   @media screen and (min-device-width: 768px) and (max-device-width: 1024px){//Tablet
@@ -31,6 +38,18 @@ const InputText = styled.input`
   border:none;
   outline:none;
   padding:0 0 0 0;
+
+  @media screen and (max-device-width: 480px) and (orientation: portrait){//Phone
+        font-size:1.5rem;
+      }
+  
+      @media screen and (min-device-width: 768px) and (max-device-width: 1024px){//Tablet
+  
+      }
+  
+      @media screen and (min-width: 1024px){//Desktop
+  
+      }
 `
 
 const Input = (props:any) =>{
@@ -48,7 +67,6 @@ const Input = (props:any) =>{
         props.callback(value);
       })
     }
-    
   }
 
   //Gets location weather data from backend
@@ -66,7 +84,7 @@ const Input = (props:any) =>{
   return(
     <Form onSubmit={handleSubmit}>
       <InputText type="text" value={location} onChange={handleChange} />
-      <InputButton type="submit" value="Submit" />
+      <InputButton type="submit" value="Submit" />      
     </Form>
   );
 }
