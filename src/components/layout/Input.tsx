@@ -33,12 +33,10 @@ const Input = (props:any) =>{
 
   const handleSubmit = (event:any) => {//On submitting, Return getWeather data
     event.preventDefault();
-    if(location != ""){//If location has value
-      //Get backend data then return via callback
-      getWeather().then((value:any)=>{
-        props.callback(value);
-      })
-    }
+    //Get backend data then return via callback
+    getWeather().then((value:any)=>{
+      props.callback(value);
+    })
   }
 
   //Gets location weather data from backend

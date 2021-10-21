@@ -63,7 +63,6 @@ const Current = (props:any) =>{
   const [conditionlink, setConditionlink] = useState("");
   const [windspeed, setWindspeed] = useState("");
   const [humidity, setHumidity] = useState("");
-  const [moonphase, setMoonphase] = useState("");
 
   
 
@@ -75,7 +74,6 @@ const Current = (props:any) =>{
       setConditionlink(props.current.condition.icon);
       setWindspeed(props.current.windspeed);
       setHumidity(props.current.humidity);
-      setMoonphase(props.astrology.moon_phase);
     }
   }, [props]);
 
