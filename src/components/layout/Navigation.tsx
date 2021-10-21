@@ -1,17 +1,12 @@
 //Package imports
-import styled, {css} from "styled-components";
+import styled from "styled-components";
 import {useEffect, useState} from "react"
 
 //Component imports
 import Input from "./Input";
 
-interface Props{//Interface for Button
-  left?: any;
-}
-
-
 //CSS for Navigation Buttons
-const Button = styled.button<Props>`
+const Button = styled.button`
     background:transparent;
     color:#F3F5F5;
     border:none;
