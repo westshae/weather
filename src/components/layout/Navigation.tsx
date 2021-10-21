@@ -22,7 +22,7 @@ const Button = styled.button<Props>`
 
 //CSS for entire navigation bar
 const StyledNavigation = styled.nav`
-    background-color:#2E415F;
+    background-color:#7997c7;
     display:grid;
 
 
@@ -42,19 +42,6 @@ const StyledNavigation = styled.nav`
         grid-template-columns:repeat(2, 1fr);
         margin-left:5%;
         margin-right:5%;
-    }
-
-
-    @media screen and (max-device-width: 480px) and (orientation: portrait){//Phone
-
-    }
-
-    @media screen and (min-device-width: 768px) and (max-device-width: 1024px){//Tablet
-
-    }
-
-    @media screen and (min-width: 1024px){//Desktop
-
     }
 `
 

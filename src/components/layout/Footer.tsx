@@ -5,7 +5,7 @@ import MediaQuery from "react-responsive";
 //CSS for footer
 const StyledFooter = styled.div`
     height:5rem;
-    background-color:#2E415F;
+    background-color:#7997c7;
     display:flex;
     justify-content:center;
     align-items:center;

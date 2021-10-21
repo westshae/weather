@@ -118,6 +118,7 @@ const Forecast = (props:any) =>{
     grid-template-columns:1fr;
     grid-column-gap:3rem;
     grid-row-gap:3rem;
+    background-color:#7997c7;
     @media screen and (min-width: 1024px){//Desktop
     grid-template-columns:repeat(4, 1fr);
     }
