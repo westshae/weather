@@ -122,6 +122,9 @@ const Forecast = (props:any) =>{
     @media screen and (min-width: 1024px){//Desktop
     grid-template-columns:repeat(4, 1fr);
     }
+    @media screen and (min-device-width: 768px) and (max-device-width: 1024px) and (orientation: landscape){//Tablet
+        grid-template-columns:1fr;
+    }
   `
 
   return(
