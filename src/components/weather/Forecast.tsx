@@ -120,7 +120,7 @@ const Forecast = (props:any) =>{
     grid-row-gap:3rem;
     background-color:#7997c7;
     @media screen and (min-width: 1024px){//Desktop
-    grid-template-columns:repeat(4, 1fr);
+    grid-template-columns:repeat(2, 1fr);
     }
     @media screen and (min-device-width: 768px) and (max-device-width: 1024px) and (orientation: landscape){//Tablet
         grid-template-columns:1fr;
